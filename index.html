@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Minimal Single Page</title>
+  <title>Hujair</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
   <style>
@@ -28,48 +28,218 @@
     }
 
     .wrap{max-width:1100px;margin:0 auto;padding:40px 24px;}
-    header{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:20px;
-      background: var(--header-bg);
-      padding: 16px 24px;
-      border-radius: 6px;
+    .hero{position:relative;display:flex;align-items:center;min-height:clamp(340px,70vh,720px);border-radius:24px;overflow:hidden;padding:32px;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(200deg,rgba(15,23,36,0.2),rgba(15,23,36,0.75) 60%,rgba(15,23,36,0.9));backdrop-filter:blur(2px);z-index:0}
+    .hero-bg{position:absolute;inset:0;background:#000 center/cover no-repeat;z-index:-1;transition:opacity .8s ease;opacity:0;background-position:50% 50%}
+    .hero.loaded .hero-bg{opacity:1;animation:heroPan 60s ease-in-out infinite alternate;will-change:transform,background-position}
+    @keyframes heroPan{
+      0%{transform:scale(1.06) translate3d(0,0,0);background-position:50% 50%}
+      50%{transform:scale(1.10) translate3d(-1.5%, -1.5%, 0);background-position:55% 45%}
+      100%{transform:scale(1.06) translate3d(1.5%, 1.5%, 0);background-position:45% 55%}
     }
-    .logo{font-weight:800;letter-spacing:-0.02em}
+    @media (prefers-reduced-motion: reduce){
+      .hero.loaded .hero-bg{animation:none}
+    }
+  .hero-content{position:relative;z-index:2;display:flex;flex-direction:column;gap:28px;max-width:none;width:100%}
+  .hero-main{display:flex;flex-direction:column;gap:28px;max-width:640px}
+  .top-bar{display:flex;align-items:center;gap:28px}
+  .top-bar nav{margin-left:auto;display:flex;align-items:center}
+    .logo{font-weight:800;letter-spacing:-0.02em;font-size:28px}
+    .tagline{font-size:clamp(32px,7vw,72px);line-height:1.05;margin:0;font-weight:800;letter-spacing:-0.02em}
+    .sub{margin:0;font-size:clamp(16px,2.2vw,22px);font-weight:300;color:var(--muted)}
+    .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:4px}
+    .btn{--btn-bg:var(--accent);background:var(--btn-bg);color:#fff;border:none;padding:14px 26px;font-size:16px;font-weight:600;border-radius:999px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;box-shadow:0 4px 18px -4px rgba(124,58,237,.5);transition:background .25s,transform .25s;cursor:pointer}
+    .btn:active{transform:translateY(2px)}
+    .btn.secondary{--btn-bg:rgba(255,255,255,0.12);backdrop-filter:blur(6px);box-shadow:none}
     nav a{color:#ffffff;text-decoration:none;margin-left:18px;font-weight:600}
+    nav a:first-child{margin-left:0}
+    @media (max-width:640px){
+      nav a{margin-left:14px;font-size:14px}
+      .hero{padding:28px 24px}
+      .logo{font-size:24px}
+      .cta-row{flex-direction:column;align-items:stretch}
+      .btn{width:100%;justify-content:center}
+    }
 
     section{padding:56px 0;border-top:1px solid rgba(255,255,255,0.03)}
     .section-title{font-size:28px;font-weight:700;margin:0 0 12px}
     .muted{color:var(--muted)}
+
+    /* Projects */
+    .projects-grid{display:grid;gap:32px;margin-top:32px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .project-card{background:var(--glass);padding:24px;border:1px solid rgba(255,255,255,0.06);border-radius:16px;display:flex;flex-direction:column;gap:12px;backdrop-filter:blur(6px)}
+    .project-card h4{margin:0;font-size:20px;display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-0.01em}
+    .project-card p{margin:0 0 4px;font-size:14px;line-height:1.5;color:var(--muted)}
+    .project-links a{color:var(--accent);text-decoration:none;font-weight:600;font-size:14px;margin-right:18px}
+    .project-links a:hover{text-decoration:underline}
+  .screens-row{display:flex;gap:12px;overflow-x:auto;padding:4px 4px 2px;margin-top:4px;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .screens-row::-webkit-scrollbar{height:8px}
+  .screens-row::-webkit-scrollbar-track{background:rgba(255,255,255,0.04);border-radius:20px}
+  .screens-row::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.18);border-radius:20px}
+  .screens-row img{height:320px;flex:0 0 auto;width:auto;border-radius:18px;border:1px solid rgba(255,255,255,0.08);background:#000;object-fit:cover;cursor:zoom-in}
+  @media (max-width:640px){.screens-row img{height:240px}}
+  .store-badge{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;background:#111b2a;border:1px solid rgba(255,255,255,0.08);border-radius:12px;color:#fff !important;font-size:13px;font-weight:600;line-height:1.1;text-decoration:none;box-shadow:0 4px 12px -4px rgba(0,0,0,0.4);transition:background .25s,border-color .25s}
+  .store-badge:hover{background:#172335;border-color:rgba(255,255,255,0.18)}
+  .store-badge svg{height:18px;width:18px;display:block}
+
+  /* Lightbox */
+  .lightbox{position:fixed;inset:0;padding:24px;background:rgba(0,0,0,0.75);backdrop-filter:saturate(120%) blur(2px);display:none;align-items:center;justify-content:center;z-index:1000}
+  .lightbox.open{display:flex}
+  .lightbox img{max-width:min(92vw,1100px);max-height:90vh;border-radius:16px;border:1px solid rgba(255,255,255,0.1);box-shadow:0 10px 40px rgba(0,0,0,0.6);background:#000}
+  .lightbox-close{position:absolute;top:14px;right:14px;width:36px;height:36px;border-radius:999px;border:1px solid rgba(255,255,255,0.2);background:rgba(17,27,42,0.85);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;cursor:pointer}
+  .lightbox-close:hover{background:rgba(23,35,53,0.9)}
+  .lightbox-nav{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+  .lightbox-btn{pointer-events:auto;width:44px;height:44px;border-radius:999px;border:1px solid rgba(255,255,255,0.25);background:rgba(17,27,42,0.85);color:#fff;display:flex;align-items:center;justify-content:center;font-size:22px;cursor:pointer;margin:0 10px}
+  .lightbox-btn:hover{background:rgba(23,35,53,0.9)}
+  @media (max-width:640px){.lightbox-btn{width:40px;height:40px;font-size:20px}}
 
     footer{padding:28px 0;color:var(--muted);font-size:14px;text-align:center}
   </style>
 </head>
 <body>
   <div class="wrap">
-    <header>
-      <div class="logo">Minimal<span style="color:var(--accent)">.</span></div>
-      <nav aria-label="Main navigation">
-        <a href="privacy-policy.html">Privacy Policy</a>
-      </nav>
+    <header class="hero" id="hero">
+      <div class="hero-bg" id="heroBg" role="img" aria-label="Decorative background image"></div>
+      <div class="hero-content">
+        <div class="top-bar">
+          <div class="logo">Hujair<span style="color:var(--accent)">.</span></div>
+          <nav aria-label="Main navigation">
+            <a href="#contact">Contact</a>
+            <a href="#projects">Projects</a>
+            <!-- <a href="privacy-policy.html">Privacy</a> -->
+          </nav>
+        </div>
+        <div class="hero-main">
+          <h1 class="tagline">السلام عليكم</h1>
+          <p class="sub">Random stuff I do.</p>
+          <div class="cta-row">
+            <a class="btn" href="#contact">Get in touch</a>
+            <!-- <a class="btn secondary" href="privacy-policy.html">Privacy Policy</a> -->
+          </div>
+        </div>
+      </div>
     </header>
 
     <main>
+      <section id="projects">
+        <h3 class="section-title">Projects</h3>
+        <p class="muted" style="max-width:640px">A selection of things I've built / building.</p>
+        <div class="projects-grid">
+          <article class="project-card" aria-labelledby="proj-payzati-title">
+            <h4 id="proj-payzati-title">Payzati</h4>
+            <p>Lightweight, privacy‑aware toolkit focused on simplifying digital payment workflows (early stage / docs sparse).</p>
+            <div class="screens-row" aria-label="Payzati app screenshots">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205558.png" alt="Payzati screenshot 1" loading="lazy">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205605.png" alt="Payzati screenshot 2" loading="lazy">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205641.png" alt="Payzati screenshot 3" loading="lazy">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205815.png" alt="Payzati screenshot 4" loading="lazy">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205826.png" alt="Payzati screenshot 5" loading="lazy">
+            </div>
+            <div class="project-links" style="margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;gap:12px">
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.payzati" target="_blank" rel="noopener" aria-label="View Payzati on Google Play">
+                <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="#34a853" d="M325.3 234.3 104.7 13.7c-4.7-4.7-11-7.5-17.7-7.7-13.8-.5-25 10.4-25 24.1v451.8c0 13.3 10.7 24.1 24 24.1 6.4 0 12.5-2.5 17-7l221.9-221.9c9.4-9.4 9.4-24.6 0-34z"/><path fill="#fbbc04" d="M361.4 270.4 325.3 234.3c9.4 9.4 9.4 24.6 0 34l36.1 36.1c15.1 15.1 40.9 4.4 40.9-17 0-6.4-2.5-12.5-7-17l-33.9-33.9z"/><path fill="#4285f4" d="m104.7 498.3 220.6-220.6c9.4-9.4 9.4-24.6 0-34L104.7 23.7c-4.6-4.6-11-7.2-17.6-7.2l255.9 255.9c9.4 9.4 9.4 24.6 0 34L87.1 505.9c6.7-.1 13-2.8 17.6-7.6z"/><path fill="#ea4335" d="M431.5 288.5 394 251l-32.6-32.6c-9.4-9.4-24.6-9.4-34 0l-24.1 24.1 58.1 58.1 36.1 36.1c9.4 9.4 24.6 9.4 34 0l.1-.1c9.1-9.4 9.1-24.6 0-34.1z"/></svg>
+                <span>Google Play</span>
+              </a>
+              <!-- <a href="payzati/privacy-policy.html">Privacy Policy</a> -->
+            </div>
+          </article>
+        </div>
+      </section>
       <section id="contact">
         <h3 class="section-title">Get in touch</h3>
-        <p class="muted">Email: <a href="mailto:hello@minimal.example" style="color:var(--accent);text-decoration:none">hello@minimal.example</a></p>
+        <p class="muted">Email: <a href="mohammad.hujair@protonmail.com" style="color:var(--accent);text-decoration:none">mohammad.hujair@protonmail.com</a></p>
       </section>
     </main>
 
     <footer>
-      © <span id="year"></span> Minimal — Crafted for clarity
+      © <span id="year"></span> Hujair — Portfolio 
     </footer>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    // Ensure scripts run after DOM is ready
+    document.addEventListener('DOMContentLoaded', function(){
+  // Set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Random hero background (extend array as you add more images)
+    (function(){
+      const images = [
+        'imgs/bgs/bg1.jpg',
+        'imgs/bgs/bg2.jpg'
+      ];
+      const pick = images[Math.floor(Math.random()*images.length)];
+      const hero = document.getElementById('hero');
+      const heroBg = document.getElementById('heroBg');
+      // Preload to avoid flash of unstyled background
+      const img = new Image();
+      img.onload = () => {
+        heroBg.style.backgroundImage = `url('${pick}')`;
+        hero.classList.add('loaded');
+      };
+      img.src = pick;
+    })();
+
+    // Lightbox gallery for screenshots
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      const lbClose = document.getElementById('lightboxClose');
+      const btnPrev = document.getElementById('lightboxPrev');
+      const btnNext = document.getElementById('lightboxNext');
+      const thumbs = Array.from(document.querySelectorAll('.screens-row img'));
+      let idx = -1;
+
+      function show(i){
+        if(!thumbs.length) return;
+        idx = (i + thumbs.length) % thumbs.length;
+        const t = thumbs[idx];
+        lbImg.src = t.src;
+        lbImg.alt = t.alt || 'Expanded screenshot';
+      }
+      function open(i){
+        show(i);
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+        lb.focus();
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden','true');
+        lbImg.removeAttribute('src');
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', (e) => {
+        const img = e.target.closest('.screens-row img');
+        if(img){
+          const i = thumbs.indexOf(img);
+          if(i !== -1){ open(i); }
+        }
+      });
+      lb.addEventListener('click', (e) => { if(e.target === lb){ close(); } });
+      lbClose.addEventListener('click', close);
+      btnPrev.addEventListener('click', () => show(idx-1));
+      btnNext.addEventListener('click', () => show(idx+1));
+      document.addEventListener('keydown', (e)=>{
+        if(!lb.classList.contains('open')) return;
+        if(e.key === 'Escape') close();
+        if(e.key === 'ArrowLeft') show(idx-1);
+        if(e.key === 'ArrowRight') show(idx+1);
+      });
+    })();
+
+    });
   </script>
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+    <img id="lightboxImg" alt="Expanded screenshot" />
+    <div class="lightbox-nav">
+      <button class="lightbox-btn" id="lightboxPrev" aria-label="Previous image">‹</button>
+      <button class="lightbox-btn" id="lightboxNext" aria-label="Next image">›</button>
+    </div>
+  </div>
 </body>
 </html>
