@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hujair</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="hero" id="hero">
+      <div class="hero-bg" id="heroBg" role="img" aria-label="Decorative background image"></div>
+      <div class="hero-content">
+        <div class="top-bar">
+          <div class="logo">Mohammad Hujair<span style="color:var(--accent)">.</span></div>
+          <nav aria-label="Main navigation">
+            <a href="#contact">Contact</a>
+            <a href="#projects">Projects</a>
+            <!-- <a href="privacy-policy.html">Privacy</a> -->
+          </nav>
+        </div>
+        <div class="hero-main">
+          <h1 class="tagline">Welocme to my Portfolio</h1>
+          <p class="sub">Here you will find most of the random stuff I do.</p>
+          <div class="cta-row">
+            <!-- <a class="btn" href="#contact">Get in touch</a> -->
+            <!-- <a class="btn secondary" href="privacy-policy.html">Privacy Policy</a> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section id="projects">
+        <div class="logo">Projects<span style="color:var(--accent)">.</span></div>
+        <p class="muted" style="max-width:640px">A selection of things I've built / building.</p>
+        <div class="projects-grid">
+          <article class="project-card" aria-labelledby="proj-payzati-title">
+            <h4 id="proj-payzati-title">Payzati</h4>
+            <p>A mobile app that tracks all of your personal financial transactions without asking for any bank account credentials. Instead, it analyzes the SMS sent by your bank using an offline AI model and automatically places each transaction into its suitable category. the app features a minimalistic design and sleek UI with animations and page transitions</p>
+            <h5 class="project-subtitle">Screenshots</h5>
+            <div class="screens-row images-row" aria-label="Payzati screenshots">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205558.png" alt="Payzati screenshot 1" loading="lazy">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205605.png" alt="Payzati screenshot 2" loading="lazy">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205641.png" alt="Payzati screenshot 3" loading="lazy">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205815.png" alt="Payzati screenshot 4" loading="lazy">
+              <img src="imgs/projects/payzati/Screenshot_20250910-205826.png" alt="Payzati screenshot 5" loading="lazy">
+            </div>
+            <h5 class="project-subtitle" style="margin-top:14px">Video Demo</h5>
+            <div class="screens-row videos-row" aria-label="Payzati videos" style="margin-top:8px">
+              <div class="video-thumb">
+                <video src="imgs/projects/payzati/Screen-20250917-194517-1.mp4" playsinline preload="metadata" aria-label="Payzati demo video"></video>
+                <button class="play-overlay" aria-label="Play video">
+                  <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" class="play-icon">
+                    <circle cx="50" cy="50" r="46" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+                    <polygon points="40,32 40,68 70,50" fill="#ffffff"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="project-links" style="margin-top:12px;display:flex;flex-wrap:wrap;align-items:center;gap:12px">
+              <a class="store-badge" href="https://play.google.com/store/apps/details?id=com.payzati" target="_blank" rel="noopener" aria-label="View Payzati on Google Play">
+                <svg viewBox="0 0 512 512" aria-hidden="true" focusable="false"><path fill="#34a853" d="M325.3 234.3 104.7 13.7c-4.7-4.7-11-7.5-17.7-7.7-13.8-.5-25 10.4-25 24.1v451.8c0 13.3 10.7 24.1 24 24.1 6.4 0 12.5-2.5 17-7l221.9-221.9c9.4-9.4 9.4-24.6 0-34z"/><path fill="#fbbc04" d="M361.4 270.4 325.3 234.3c9.4 9.4 9.4 24.6 0 34l36.1 36.1c15.1 15.1 40.9 4.4 40.9-17 0-6.4-2.5-12.5-7-17l-33.9-33.9z"/><path fill="#4285f4" d="m104.7 498.3 220.6-220.6c9.4-9.4 9.4-24.6 0-34L104.7 23.7c-4.6-4.6-11-7.2-17.6-7.2l255.9 255.9c9.4 9.4 9.4 24.6 0 34L87.1 505.9c6.7-.1 13-2.8 17.6-7.6z"/><path fill="#ea4335" d="M431.5 288.5 394 251l-32.6-32.6c-9.4-9.4-24.6-9.4-34 0l-24.1 24.1 58.1 58.1 36.1 36.1c9.4 9.4 24.6 9.4 34 0l.1-.1c9.1-9.4 9.1-24.6 0-34.1z"/></svg>
+                <span>Google Play</span>
+              </a>
+              <!-- <a href="payzati/privacy-policy.html">Privacy Policy</a> -->
+            </div>
+          </article>
+          <article class="project-card" aria-labelledby="proj-toy-title">
+            <h4 id="proj-toy-title">3D Printed namagashi</h4>
+            <p>I was watching a video about the process of making namagashi teats with my kids and I thougt </p>
+            <h5 class="project-subtitle">Screenshot</h5>
+            <div class="screens-row images-row" aria-label="Toy screenshots">
+              <img src="imgs/projects/toy/20250811_160401.jpg" alt="Toy project screenshot" loading="lazy">
+            </div>
+          </article>
+          <article class="project-card" aria-labelledby="proj-evo-title">
+            <h4 id="proj-evo-title">Evo</h4>
+            <p>A minimal experimental project exploring simple automation and iteration workflows. More details soon.</p>
+            <h5 class="project-subtitle">Video Demo</h5>
+            <div class="screens-row videos-row" aria-label="Evo videos">
+              <div class="video-thumb">
+                <video src="imgs/projects/evo/PXL_20250827_035706249.mp4~2 - Copy.mp4" playsinline preload="metadata" aria-label="Evo demo video"></video>
+                <button class="play-overlay" aria-label="Play video">
+                  <svg viewBox="0 0 100 100" aria-hidden="true" focusable="false" class="play-icon">
+                    <circle cx="50" cy="50" r="46" fill="rgba(0,0,0,0.5)" stroke="rgba(255,255,255,0.6)" stroke-width="2"/>
+                    <polygon points="40,32 40,68 70,50" fill="#ffffff"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section id="contact">
+        <h3 class="section-title">Get in touch</h3>
+  <p class="muted">Email: <a href="mailto:mohammad.hujair@protonmail.com" style="color:var(--accent);text-decoration:none">mohammad.hujair@protonmail.com</a></p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Hujair — Portfolio 
+    </footer>
+  </div>
+
+  <script>
+    // Ensure scripts run after DOM is ready
+    document.addEventListener('DOMContentLoaded', function(){
+  // Set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Random hero background (extend array as you add more images)
+    (function(){
+      const images = [
+        'imgs/bgs/bg1.jpg',
+        'imgs/bgs/bg2.jpg'
+      ];
+      const pick = images[Math.floor(Math.random()*images.length)];
+      const hero = document.getElementById('hero');
+      const heroBg = document.getElementById('heroBg');
+      // Preload to avoid flash of unstyled background
+      const img = new Image();
+      img.onload = () => {
+        heroBg.style.backgroundImage = `url('${pick}')`;
+        hero.classList.add('loaded');
+      };
+      img.src = pick;
+    })();
+
+    // Lightbox gallery for screenshots and videos
+    (function(){
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightboxImg');
+      const lbClose = document.getElementById('lightboxClose');
+      const btnPrev = document.getElementById('lightboxPrev');
+      const btnNext = document.getElementById('lightboxNext');
+  const thumbs = Array.from(document.querySelectorAll('.images-row img, .videos-row video'));
+      let idx = -1;
+      let isVideo = false;
+      let videoEl = null;
+
+      function show(i){
+        if(!thumbs.length) return;
+        idx = (i + thumbs.length) % thumbs.length;
+        const t = thumbs[idx];
+        // Cleanup previous video if any
+        if(videoEl){ videoEl.pause(); videoEl.remove(); videoEl = null; }
+        isVideo = t.tagName.toLowerCase() === 'video';
+        if(isVideo){
+          lbImg.removeAttribute('src');
+          // Clone a playable video with controls for the lightbox
+          videoEl = document.createElement('video');
+          videoEl.src = t.currentSrc || t.getAttribute('src');
+          videoEl.controls = true;
+          videoEl.autoplay = true;
+          videoEl.loop = true;
+          videoEl.playsInline = true;
+          videoEl.style.maxWidth = 'min(92vw,1100px)';
+          videoEl.style.maxHeight = '90vh';
+          videoEl.style.borderRadius = '16px';
+          videoEl.style.border = '1px solid rgba(255,255,255,0.1)';
+          videoEl.style.boxShadow = '0 10px 40px rgba(0,0,0,0.6)';
+          lbImg.insertAdjacentElement('afterend', videoEl);
+        } else {
+          lbImg.src = t.currentSrc || t.getAttribute('src');
+          lbImg.alt = t.alt || 'Expanded screenshot';
+        }
+      }
+      function open(i){
+        show(i);
+        lb.classList.add('open');
+        lb.setAttribute('aria-hidden','false');
+        lb.focus();
+        document.body.style.overflow = 'hidden';
+      }
+      function close(){
+        lb.classList.remove('open');
+        lb.setAttribute('aria-hidden','true');
+        lbImg.removeAttribute('src');
+        if(videoEl){ videoEl.pause(); videoEl.remove(); videoEl = null; }
+        document.body.style.overflow = '';
+      }
+
+      document.addEventListener('click', (e) => {
+        // Image click
+        const img = e.target.closest('.images-row img');
+        if(img){
+          const i = thumbs.indexOf(img);
+          if(i !== -1){ open(i); }
+          return;
+        }
+        // Video click via overlay or video itself
+        const playBtn = e.target.closest('.play-overlay');
+        const vid = playBtn ? playBtn.closest('.video-thumb').querySelector('video') : e.target.closest('.videos-row video');
+        if(vid){
+          const i = thumbs.indexOf(vid);
+          if(i !== -1){ open(i); }
+        }
+      });
+      lb.addEventListener('click', (e) => { if(e.target === lb){ close(); } });
+      lbClose.addEventListener('click', close);
+      btnPrev.addEventListener('click', () => show(idx-1));
+      btnNext.addEventListener('click', () => show(idx+1));
+      document.addEventListener('keydown', (e)=>{
+        if(!lb.classList.contains('open')) return;
+        if(e.key === 'Escape') close();
+        if(e.key === 'ArrowLeft') show(idx-1);
+        if(e.key === 'ArrowRight') show(idx+1);
+      });
+    })();
+
+    });
+  </script>
+  <!-- Lightbox overlay -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" tabindex="-1">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">×</button>
+    <img id="lightboxImg" alt="Expanded screenshot" />
+    <div class="lightbox-nav">
+      <button class="lightbox-btn" id="lightboxPrev" aria-label="Previous image">‹</button>
+      <button class="lightbox-btn" id="lightboxNext" aria-label="Next image">›</button>
+    </div>
+  </div>
+</body>
+</html>
