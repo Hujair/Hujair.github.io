@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payzati - Real-time Expense Tracking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Section 1: Hero -->
+    <section class="section hero-section">
+        <div class="logo">
+            <img src="img/black logo.png" alt="Payzati Logo">
+        </div>
+        
+        <div class="hero-content">
+            <h1>Real-time<br>expense tracking</h1>
+            
+            <div class="cta-buttons">
+                <a href="#" class="btn btn-download">
+                    <img src="img/play store.png" alt="Download on Play Store">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: App Preview -->
+    <section class="section preview-section">
+        <div class="divider"></div>
+        <div class="slideshow-container">
+            <div class="slide fade">
+                <img src="img/Pixels.png" alt="App Preview 1">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-1.png" alt="App Preview 2">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-2.png" alt="App Preview 3">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-3.png" alt="App Preview 4">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-4.png" alt="App Preview 5">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-5.png" alt="App Preview 6">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-6.png" alt="App Preview 7">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-7.png" alt="App Preview 8">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-8.png" alt="App Preview 9">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-9.png" alt="App Preview 10">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-10.png" alt="App Preview 11">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-11.png" alt="App Preview 12">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-12.png" alt="App Preview 13">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-13.png" alt="App Preview 14">
+            </div>
+            <div class="slide fade">
+                <img src="img/Pixels-14.png" alt="App Preview 15">
+            </div>
+
+            <!-- Navigation buttons -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+            <!-- Dots for slide indicators -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+                <span class="dot" onclick="currentSlide(13)"></span>
+            </div>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- Section 3: Features -->
+    <section class="section features-section">
+        <div class="divider"></div>
+        <div class="feature">
+            <h2>Effortless.<br>Intuitive.<br>& Practical</h2>
+        </div>
+        <div class="divider"></div>
+    </section>
+
+    <!-- Section 4: Security -->
+    <section class="section security-section">
+        <div class="divider"></div>
+        <div class="feature">
+            <h2>Secure by<br>design</h2>
+        </div>
+        <div class="divider"></div>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Developed by Mohammad Hujair</p>
+            <p>Email: <a href="mailto:mohammad.hujair@protonmail.com">mohammad.hujair@protonmail.com</a></p>
+        </footer>
+    </section>
+
+    <!-- Page Indicator -->
+    <div class="page-indicator">
+        <span class="dot active" data-section="1"></span>
+        <span class="dot" data-section="2"></span>
+        <span class="dot" data-section="3"></span>
+        <span class="dot" data-section="4"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
